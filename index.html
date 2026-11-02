@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f2f2">
+  <script>
+    // Runs before the page paints, so dark mode never flashes white.
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#181818' : '#f2f2f2';
+    })();
+  </script>
+  <meta name="description" content="Buna Draga — IT student, web developer and digital artist in Prishtina, Kosovo. Exploring software, electronics and creative work.">
+  <meta property="og:title" content="Buna Draga — Portfolio">
+  <meta property="og:description" content="Web developer, digital artist and IT student based in Prishtina, Kosovo.">
+  <meta property="og:type" content="website">
+  <title>Buna Draga — Developer & Digital Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#home" aria-label="Buna Draga, back to home"><span class="wordmark-symbol">b.</span><span class="wordmark-meta">independent portfolio <span aria-hidden="true">/</span> 2026</span></a>
+
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+      <span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a class="nav-link is-active" href="#home" data-nav="home" aria-current="page">home</a>
+      <a class="nav-link" href="#about" data-nav="about">about me</a>
+      <a class="nav-link" href="#experience" data-nav="experience">my experience</a>
+      <a class="nav-link" href="#contact" data-nav="contact">contact me</a>
+    </nav>
+
+    <div class="header-controls">
+      <button type="button" class="header-control" id="music-toggle">music: off</button>
+      <button type="button" class="header-control" id="theme-toggle">theme: light</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Background from page 6 of the PDF -->
+    <section id="home" class="scene scene-home" aria-labelledby="home-heading" data-section="home">
+      <div class="scene-container home-layout">
+        <div class="hero-content">
+          <p class="eyebrow hero-eyebrow"><span class="ink-dot" aria-hidden="true"></span> independent portfolio <span class="eyebrow-divider">/</span> vol. 01</p>
+          <h1 id="home-heading" class="hero-title">
+            <em>
+              <span class="hero-echo echo-1" aria-hidden="true">Buna<br>Draga.</span>
+              <span class="hero-echo echo-2" aria-hidden="true">Buna<br>Draga.</span>
+              <span class="hero-echo echo-3" aria-hidden="true">Buna<br>Draga.</span>
+              <span class="hero-echo echo-4" aria-hidden="true">Buna<br>Draga.</span>
+              <span class="hero-echo echo-5" aria-hidden="true">Buna<br>Draga.</span>
+              <span class="hero-echo echo-6" aria-hidden="true">Buna<br>Draga.</span>
+
+              <span class="hero-main">Buna<br>Draga<span class="hero-period">.</span></span>
+            </em>
+          </h1>
+          <div class="hero-caption">
+            <span class="caption-rule" aria-hidden="true"></span>
+            <p>Web developer <span class="soft-slash">/</span> digital artist <span class="soft-slash">/</span> student.<br>Based in Prishtina, Kosovo.</p>
+          </div>
+        </div>
+        <div class="home-bottom">
+          <p>A collection of things I build, study and experiment with.</p>
+          <a class="scroll-cue" href="#about"><span>scroll to explore</span><span class="scroll-cue-arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <span class="vertical-caption" aria-hidden="true">40°N — 21°E / PRISHTINA</span>
+    </section>
+
+    <!-- Background from page 7 of the PDF -->
+    <section id="about" class="scene scene-paper scene-about" aria-labelledby="about-heading" data-section="about">
+      <div class="scene-container">
+        <div class="section-kicker"><span>01 — introduction</span><span class="section-kicker-rule" aria-hidden="true"></span><span>the person behind the work</span></div>
+        <div class="editorial-grid about-grid">
+          <div class="heading-column">
+            <h2 class="section-title" id="about-heading">About<br><span>me</span></h2>
+            <p class="side-note">Finding the interesting parts<br>of unfamiliar things.</p>
+          </div>
+          <div class="body-column about-body">
+            <p class="lead-copy">I'm Buna, an IT student from Prishtina, Kosovo. I LOVE ALL THINGS TECH RELATED <span class="lead-muted">(obviously)</span></p>
+            <div class="thin-rule" aria-hidden="true"></div>
+            <p class="body-copy">I spend much of my time learning software, trying out programming languages, and building projects that help me understand the systems behind their interfaces.</p>
+            <p class="body-copy">My interests move between software engineering, Linux, automation, electronics and creative work. I enjoy exploring all things technology has to offer so i can find my feild of work!!</p>
+            <div class="keyword-line"><span>software</span><span>systems</span><span>electronics</span><span>art</span></div>
+          </div>
+        </div>
+        <div class="section-bottom"><span>/ 01</span><span>about — continued below</span></div>
+      </div>
+    </section>
+
+    <!-- Same second image, as requested -->
+    <section id="currently" class="scene scene-paper scene-currently" aria-labelledby="currently-heading" data-section="about">
+      <div class="scene-container">
+        <div class="section-kicker"><span>02 — in the present</span><span class="section-kicker-rule" aria-hidden="true"></span><span>notes from right now</span></div>
+        <div class="editorial-grid currently-grid">
+          <div class="heading-column">
+            <h2 class="section-title" id="currently-heading">Currently<br><span>doing</span></h2>
+          </div>
+          <div class="body-column currently-body">
+            <p class="lead-copy">Taking things slow right now so <span class="lead-muted">i can make some room to learn</span></p>
+            <p class="body-copy currently-intro">I'm focusing on smaller personal projects while prioritizing high school and spending more time with classic literature. Programming is still a big part of my life, just without the rush.(so i dont get overwhelmed/burned out from overworikng)</p>
+            <div class="focus-list" aria-label="Current interests">
+              <div class="focus-item"><span class="focus-index">01</span><span class="focus-label">Small, personal projects</span><span class="focus-symbol" aria-hidden="true">↗</span></div>
+              <div class="focus-item"><span class="focus-index">02</span><span class="focus-label">Finishing high school</span><span class="focus-symbol" aria-hidden="true">↗</span></div>
+              <div class="focus-item"><span class="focus-index">03</span><span class="focus-label">Literature, philosophy & art</span><span class="focus-symbol" aria-hidden="true">↗</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-bottom"><span>/ 02</span><span>work in progress, always</span></div>
+      </div>
+    </section>
+
+    <figure class="art-banner">
+      <img src="assets/Untitled.webp" width="2518" height="420" loading="lazy" alt="Drawings of dark forests with lone figures on snow, turned on their side.">
+    </figure>
+
+    <!-- Same second image, as requested -->
+    <section id="experience" class="scene scene-paper scene-experience" aria-labelledby="experience-heading" data-section="experience">
+      <div class="scene-container">
+        <div class="section-kicker"><span>03 — practice & process</span><span class="section-kicker-rule" aria-hidden="true"></span><span>what I work with</span></div>
+        <div class="experience-intro">
+          <h2 class="section-title" id="experience-heading">My<br><span>experience!</span></h2>
+          <p class="experience-summary">Hands-on work in software development, web design, networking and electronics. Mostly learned through making, breaking and fixing things.</p>
+        </div>
+        <div class="experience-panels">
+          <div class="skill-panel">
+            <div class="panel-label"><span>01 /</span> languages &amp; code</div>
+            <ul class="skill-list"><li>C#</li><li>Python</li><li>Java</li><li>JavaScript</li><li>HTML &amp; CSS</li><li>SQL</li></ul>
+          </div>
+          <div class="skill-panel">
+            <div class="panel-label"><span>02 /</span> software &amp; tools</div>
+            <ul class="skill-list"><li>Linux</li><li>Git &amp; GitHub</li><li>VS Code</li><li>MySQL</li><li>.NET</li></ul>
+          </div>
+          <div class="skill-panel">
+            <div class="panel-label"><span>03 /</span> beyond code</div>
+            <ul class="skill-list"><li>Automation</li><li>Networking</li><li>Electronics</li><li>Circuit design</li><li>Blender</li></ul>
+          </div>
+        </div>
+        <div class="section-bottom"><span>/ 03</span><span>always learning</span></div>
+      </div>
+    </section>
+
+    <!-- Background from page 8 of the PDF -->
+    <section id="contact" class="scene scene-contact" aria-labelledby="contact-heading" data-section="contact">
+      <div class="scene-container contact-layout">
+        <div class="section-kicker"><span>04 — say hello</span><span class="section-kicker-rule" aria-hidden="true"></span><span>open to interesting conversations</span></div>
+        <div class="editorial-grid contact-grid">
+          <div class="heading-column">
+            <h2 class="section-title" id="contact-heading">Contact<br><span>me</span></h2>
+            <p class="contact-aside">Have something in mind?<br>I'm open to collaborations.</p>
+          </div>
+          <div class="body-column contact-body">
+            <p class="contact-preamble">Find me elsewhere on the internet!!!</p>
+            <ul class="social-links">
+              <li><a href="https://github.com/2bunuki7" target="_blank" rel="noopener noreferrer"><span class="social-platform">GitHub</span><span class="social-value">2bunuki7</span><span class="social-arrow" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.instagram.com/bunuki__/" target="_blank" rel="noopener noreferrer"><span class="social-platform">Instagram</span><span class="social-value">bunuki__</span><span class="social-arrow" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.linkedin.com/in/2bunadraga7/" target="_blank" rel="noopener noreferrer"><span class="social-platform">LinkedIn</span><span class="social-value">2bunadraga7</span><span class="social-arrow" aria-hidden="true">↗</span></a></li>
+              <li><button type="button" class="discord-button" data-copy="2702b" aria-label="Copy Discord username 2702b"><span class="social-platform">Discord</span><span class="social-value">2702b</span><span class="social-arrow" aria-hidden="true">↗</span></button></li>
+            </ul>
+            <p class="copy-hint">Discord username is copied when clicked.</p>
+          </div>
+        </div>
+        <div class="contact-footer"><span>/ 04</span><p>Designed & built in Prishtina © <span id="year">2026</span></p><a href="#home">back to top ↑</a></div>
+      </div>
+    </section>
+  </main>
+  <audio id="site-music" src="assets/miniPlaylist/ASC - The 5 ½ Minute Hallway [SMDE37] [pxleoPUFflg].mp3" loop preload="none"></audio>
+  <div id="copy-toast" class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
